@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doc</title>
     <meta name="robots" content="noindex, nofollow">
-    <meta name="theme-color" content="#d2edf8" />
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="fonts/stylesheet.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header style="display: none;">
-        <div class="container fx-ac">
-            <img src="img" class="logo" alt="logo">
+    <header class="header">
+        <div class="container fx-ac fx-jb">
+            <img src="img/logo.png" class="logo" alt="logo">
 
-            <nav>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
+            <nav class="fx-ac">         
+                <a href="#" class="active">ХРОНОЛОГИЯ</a>
+                <a href="#">ЛИЧНОСТИ</a>
+                <a href="#">работы</a>
+                <a href="#">трафарет</a>
+                <a href="#">принты</a>
+                <a href="#">выставки</a>
+                <a href="#">влияние</a>
+                <a href="#">мерч</a>
             </nav>
         </div>
     </header>
@@ -68,7 +68,7 @@
             entries.forEach(({ target: video, isIntersecting }) => {
                 video[isIntersecting ? 'play' : 'pause']();
                 console.log(isIntersecting);
-                
+
                 video.addEventListener("contextmenu", e => e.preventDefault(), false);
                 video.hasAttribute("controls") && video.removeAttribute("controls");
             });
