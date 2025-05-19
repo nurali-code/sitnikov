@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#d2edf8" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header style="display: none;">
+        <div class="container fx-ac">
+            <img src="img" class="logo" alt="logo">
+
+            <nav>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </nav>
+        </div>
+    </header>
+    <video src="vid/1_1.mp4" controlsList="nofullscreen" playsinline muted="muted" autoplay></video>
+    <video src="vid/2_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/3_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/4_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/5_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/6_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/7_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/8_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/9_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/10_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/11_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/12_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/13_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/14_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/15_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/16_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/17_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/18_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/19_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/20_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/21_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/22_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/23_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/24_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/25_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/26_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+    <video src="vid/27_1.mp4" controlsList="nofullscreen" playsinline muted="muted" class="observe"></video>
+
+    <script>
+        const options = { root: null, rootMargin: '0px', threshold: 0.5 };
+        let observer;
+        function initObserver() {
+            observer?.disconnect();
+            observer = new IntersectionObserver(handleIntersection, options);
+            document.querySelectorAll('.observe')
+                .forEach(el => observer.observe(el));
+        }
+        function handleIntersection(entries) {
+            entries.forEach(({ target: video, isIntersecting }) => {
+                video[isIntersecting ? 'play' : 'pause']();
+                console.log(isIntersecting);
+                
+                video.addEventListener("contextmenu", e => e.preventDefault(), false);
+                video.hasAttribute("controls") && video.removeAttribute("controls");
+            });
+        }
+        initObserver();
+        window.addEventListener('resize', initObserver);
+    </script>
+</body>
+
+</html>

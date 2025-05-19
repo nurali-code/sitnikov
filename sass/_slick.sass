@@ -1,0 +1,142 @@
+
+.slider
+    position: relative
+    z-index: 200
+    padding: 0 0px
+    width: 100vw
+    max-width: 516px
+    margin: 0px auto 80px
+    left: -16px
+    &-nav
+        .slick
+            &-track,
+            &-list
+                padding: 0
+
+.slick
+    &-track,
+    &-list
+        display: flex
+        align-items: stretch
+        padding: 20px 0
+
+.item
+    display: flex !important
+    padding: 0 0 5px
+    overflow: hidden
+    border-radius: 20px
+    width: 200px
+    background-color: #D2EDF8
+    overflow: hidden
+    margin: 0 5px
+    position: relative
+    z-index: 1
+    border: 3px solid #D2EDF8
+    &__img
+        transition: all ease .3s
+        padding: 0
+        opacity: 0
+        animation: fadeDown .3s ease forwards
+        &:nth-child(3)
+            animation-delay: .2s
+        &:nth-child(4)
+            animation-delay: .3s
+
+    &__prev
+        width: 90%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+.slick-arrow
+    position: absolute
+    top: 50%
+    width: 20px
+    height: 20px
+    line-height: 50px
+    border: none
+    background-color: transparent
+    color: #fff
+    font-family: monospace
+    font-size: 5rem
+    transform: translateY(-50%)
+    z-index: 300
+    outline: none
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: contain
+    background-image: url('../img/arrow.svg')
+    &:hover,
+    &:active
+        opacity: 1
+        filter: invert(1)
+
+.slick-prev
+    left: 6px
+    text-align: left
+
+.slick-next
+    right: 6px
+    text-align: right
+    transform: scaleX(-1) translateY(-50%) !important
+
+.item.slick-slide
+    transition: transform .3s
+    position: relative
+
+.item.slick-slide.slick-center + .slick-slide
+    transform: scale(0.6) translate(-170px)
+    z-index: 10
+
+.item.slick-slide.slick-active
+
+.item.slick-slide.slick-current.slick-active.slick-center
+
+.slider .slick-slide,
+.slider .slick-slide[aria-hidden="true"]:not(.slick-cloned) ~ .slick-cloned[aria-hidden="true"]
+    transform: scale(0.6) translate(170px)
+
+.slider .slick-center,
+.slider .slick-slide[aria-hidden="true"]:not([tabindex="-1"]) + .slick-cloned[aria-hidden="true"]
+    transform: scale(1)
+    z-index: 30
+    border-color: #000
+    box-shadow: 0 0 24px 6px rgba(255, 255, 255, 1)
+
+    .item
+        &__prev
+            opacity: 0
+
+        &__img
+            animation: fadeIn .4s ease forwards
+            &:nth-child(2)
+                animation-delay: .1s
+            &:nth-child(3)
+                animation-delay: .2s
+            &:nth-child(4)
+                animation-delay: .3s
+
+    h3
+        animation: fadeIn .4s ease forwards
+        opacity: 0
+        animation-delay: .1s
+
+    p
+        animation: fadeIn .4s ease forwards
+        opacity: 0
+        animation-delay: .2s
+
+@keyframes fadeIn
+    0%
+        transform: translateY(30px)
+    100%
+        opacity: 1
+        transform: translateY(0px)
+
+@keyframes fadeDown
+    0%
+        transform: translateY(0px)
+    100%
+        opacity: 0
+        transform: translateY(30px)
