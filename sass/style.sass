@@ -2,3 +2,33 @@
 // @import 'fonts'
 @import 'elements'
 @import 'header'
+
+.merch
+    padding: 7vw 20px
+    text-align: center
+    &__heading
+        margin: 0 auto 3vw
+        font-size: 10.42vw
+        text-transform: uppercase
+        color: #000
+        letter-spacing: -.9vw
+        transform: rotate(-4deg)
+
+    &__wrap
+        max-width: 95%
+        gap: 3.2vw
+        margin: 0 auto 7vw
+        &:last-child
+            margin-bottom: 0
+        &>*
+            width: calc( (100% - 3.2vw) / 2 )
+
+    &__item 
+        img 
+            display: block
+            max-width: 90%
+            margin: 0 auto 20px
+
+        h3 
+            font-size: 1.93vw
+            line-height: 130%
