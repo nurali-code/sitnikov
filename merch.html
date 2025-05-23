@@ -17,12 +17,12 @@
 
             <nav class="fx-ac">
                 <a href="./index.html">ХРОНОЛОГИЯ</a>
-                <a href="#">ЛИЧНОСТИ</a>
-                <a href="#">работы</a>
-                <a href="#">трафарет</a>
-                <a href="#">принты</a>
-                <a href="#">выставки</a>
-                <a href="#">влияние</a>
+                <a href="./personality.html">ЛИЧНОСТИ</a>
+                <a href="./works.html">работы</a>
+                <a href="./trafaret.html">трафарет</a>
+                <a href="./prints.html">принты</a>
+                <a href="./exhibitions.html">выставки</a>
+                <a href="./influence.html">влияние</a>
                 <a href="./merch.html" class="active">мерч</a>
             </nav>
         </div>
@@ -124,27 +124,7 @@
         </section>
     </main>
 
-    <script>
-        const options = { root: null, rootMargin: '0px', threshold: 0.5 };
-        let observer;
-        function initObserver() {
-            observer?.disconnect();
-            observer = new IntersectionObserver(handleIntersection, options);
-            document.querySelectorAll('.observe')
-                .forEach(el => observer.observe(el));
-        }
-        function handleIntersection(entries) {
-            entries.forEach(({ target: video, isIntersecting }) => {
-                video[isIntersecting ? 'play' : 'pause']();
-                console.log(isIntersecting);
-
-                video.addEventListener("contextmenu", e => e.preventDefault(), false);
-                video.hasAttribute("controls") && video.removeAttribute("controls");
-            });
-        }
-        initObserver();
-        window.addEventListener('resize', initObserver);
-    </script>
+     <script src="js/script.js"></script>
 </body>
 
 </html>
