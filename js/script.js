@@ -1,4 +1,3 @@
-AOS.init({ offset: 250, duration: 1200, });
 
 const options = { root: null, rootMargin: '0px', threshold: 0.5 };
 let observer;
@@ -17,3 +16,5 @@ function handleIntersection(entries) {
 }
 initObserver();
 window.addEventListener('resize', initObserver);
+
+AOS.init({ offset: 250, duration: 1200, });
