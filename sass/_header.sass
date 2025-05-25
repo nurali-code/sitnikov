@@ -3,13 +3,15 @@
     z-index: 9999
     top: 0
     left: 0
+    position: fixed
     color: #000
     padding: 30px 40px
-    background-color: #fff
+    &.--dark
+        filter: invert(1)
     nav
         gap: 10px
 
-    .logo 
+    .logo
         width: 15vw
 
     a
@@ -38,10 +40,9 @@
 
     @media screen and ( max-width:  992px )
         padding: 20px 30px
-        .logo 
+        .logo
             max-width: 200px
         nav
-            a 
+            a
                 display: none
                 font-size: 20px
-        
